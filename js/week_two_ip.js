@@ -14,56 +14,40 @@ function calculateYear(dob) {
 
     var dobTostring = dob.toString().split('').slice(2, 4);
     var yy = dobTostring.toString().replace(",", "");
+    yy=parseInt(yy);
     return yy;
 }
 //calculate century digits
 function calculateCenturyDigits(dob) {
     var dobTostring = dob.toString().split('').slice(0, 2);
     var cc = dobTostring.toString().replace(",", "");
+    cc = parseInt(cc);
     return cc;
 }
 
-//Calculate d value
+//Calculate day of the week value
 function calculateDay(dob, mm,dd) {
     var yy = calculateYear(dob.value);
     var cc = calculateCenturyDigits(dob.value); 
-    console.log("YY"+yy+"CC "+cc+" MM"+ mm + "DD"+dd);
-    c = (cc/4) - 2*cc-1;
-    y = 5*yy/4;
-    m = 26*(mm.value+1)/10;
-    d = dd.value;
-
-    var dayofweek = (c+y+m+d)%7;
-    //var d = ( firstPart(cc) + secondPart(yy) +  thirdPart(mm.value) + dd.value ) % 7 ;
-    //var d =  ( ( (cc/4) -2*cc-1) + ((5*yy/4) ) + ((26*(mm.value+1)/10)) + dd.value ) % 7;
+    console.log("YY"+yy+"CC "+cc+" MM"+ mm.value + "DD"+dd.value);
+    c = parseInt((cc/4) - 2*cc-1);
+    console.log(c);
+    y = parseInt(5*yy/4);
+    console.log(y);
+    m = parseInt(26*(mm.value+1)/10);
+    console.log(m);
+    d = parseInt(dd.value);
+    console.log(d);
+    var h = c+y+m+d;
+    var dayofweek = (c+y+m+d) %7;
     
-    console.log("mod "+dayofweek);
+    console.log("mod "+h);
     var day= parseInt(dayofweek);
     console.log(dayofweek);
 
     return day;
 
 }
-
-//broken down functio to calculate d into 3 parts as below:
-function firstPart(cc){
-    var firstValue = ((cc/4) - 2*cc - 1);
-    console.log(firstValue);
-    return firstValue;
-}
-
-function secondPart(yy){
-    var secondValue = ((5*yy/4));
-    console.log(secondValue);
-    return secondValue;
-}
-
-function thirdPart(mm){
-    var thirdValue = ((26*(mm+1)/10));
-    console.log(thirdValue);
-    return thirdValue;
-}
-
 // Return the Akan name
 function calculateName(dob,mm,gender,day) {
     if(mm.value<=0 || mm.value > 12){
