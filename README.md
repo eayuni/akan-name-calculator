@@ -1,17 +1,8 @@
-# Akan Name calculator
-A web application that takes a user's birthday and calculates the day of the week they were born and then depending on their gender outputs their Akan Name. 
+# Akan Name calculator 
 
 ## Description
 
 A web application that takes a user's birthday and calculates the day of the week they were born and then depending on their gender outputs their Akan Name. 
-
-## Getting Started
-
-### Dependencies
-
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
-
 
 ## Authors
 
@@ -19,7 +10,12 @@ Contributors names and contact info
 
 ex. Eunice Otieno (https://github.com/eayuni)
 
+## Technologies used
+Javascript
 
+### Dependencies
+
+* Install Node js
 
 ## License
 
