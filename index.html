@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="js/week_two_ip.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet" , type="text/css">
+</head>
+
+<body>
+    <div class="container">
+    <h1 class="">Akan Name Finder</h1>
+    <p>Enter your date of birth below to find your name in Akan depending on the day of the week you were born.</p>
+
+    <form>
+        <div class="form-group col-md-6">
+            <label for="dob" class="col-sm-2 col-form-label">Enter year</label>
+            <div class="col-sm-10">
+                <input type="dob" class="form-control" id="dob" placeholder="Enter Year">
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="mnth" class="col-sm-2 col-form-label">Enter month</label>
+            <div class="col-sm-10">
+                <input type="mnth" class="form-control" id="mnth" placeholder="Enter Month">
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="day" class="col-sm-2 col-form-label">Enter day</label>
+            <div class="col-sm-10">
+                <input type="day" class="form-control" id="day" placeholder="Enter Day">
+            </div>
+        </div>
+        <fieldset class="form-group col-md-6">
+            <div class="row">
+                <legend class="col-form-label col-sm-2 pt-0">Gender: </legend>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" id="female" value="female"
+                            checked>
+                        <label class="form-check-label" for="female">
+                            Female
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                        <label class="form-check-label" for="male">
+                            Male
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary"
+                    onclick="calculateName(dob,mnth,gender,day)">Submit</button>
+            </div>
+        </div>
+    </form>
+    </div>
+</body>
+
+</html
