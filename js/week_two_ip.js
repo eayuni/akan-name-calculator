@@ -50,6 +50,9 @@ function calculateDay(dob, mm,dd) {
 }
 // Return the Akan name
 function calculateName(dob,mm,gender,day) {
+    if(dob.value == "" || mm.value == "" || gender.value== "" || day.value== ""){
+        return alert("Enter the required details");
+    }
     if(mm.value<=0 || mm.value > 12){
         return alert("Enter month value between 1 and 12");
     }
