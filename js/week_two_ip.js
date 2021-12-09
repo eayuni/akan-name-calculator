@@ -29,19 +29,11 @@ function calculateCenturyDigits(dob) {
 function calculateDay(dob, mm, dd) {
     var yy = calculateYear(dob.value);
     var cc = calculateCenturyDigits(dob.value);
-    console.log("YY" + yy + "CC " + cc + " MM" + mm.value + "DD" + dd.value);
-    c = parseInt((cc / 4) - 2 * cc - 1);
-    console.log(c);
-    y = parseInt(5 * yy / 4);
-    console.log(y);
-    m = parseInt(26 * (mm.value + 1) / 10);
-    console.log(m);
+ 
     d = parseInt(dd.value);
-    console.log(d);
-    var h = c + y + m + d;
-    var dayofweek = (c + y + m + d) % 7;
 
-    console.log("mod " + h);
+    var dayofweek= (parseInt((cc/4)- 2 * cc - 1) + parseInt((5*yy/4)) + parseInt((26*(mm.value+1)/10)) + d) % 7;
+     
     var day = parseInt(dayofweek);
     console.log("day: "+day);
 
@@ -73,7 +65,7 @@ function calculateName(dob, mm, gender, day) {
     else {
         name = "Not Found";
     }
-    alert("Your Akan name is " + name);
+    //alert("Your Akan name is " + name);
     console.log(name);
-    return name;
+    return alert("Your Akan name is " + name);;
 }
